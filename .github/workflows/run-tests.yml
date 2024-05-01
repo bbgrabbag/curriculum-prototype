@@ -22,9 +22,16 @@ jobs:
       options: --user 1001
     steps:
       - uses: actions/checkout@v4
-      # replace with the following for regular use:
-      - uses: cypress-io/github-action@v6
+      - name: Install 📦
+        uses: cypress-io/github-action@v6
         with:
+          runTests: false
+
+      # replace with the following for regular use:
+      - name: Run Tests 🧪
+        uses: cypress-io/github-action@v6
+        with:
+          install: false
           runTests: false
           start: npm run dev
           # working-directory: examples/basic
