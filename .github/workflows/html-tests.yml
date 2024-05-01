@@ -32,6 +32,5 @@ jobs:
         with:
           working-directory: ./lessons/test
           install: false
-          runTests: false
           start: npm run dev
           wait-on: http://127.0.0.1:5500
