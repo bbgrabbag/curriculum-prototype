@@ -3,8 +3,6 @@ on:
   push:
     branches:
       [master]
-      # only run this workflow when something in the app-a changes
-      # or in this workflow file
     paths:
     - 'lessons/test/**'
     - package.json
@@ -13,11 +11,6 @@ on:
 jobs:
   run-tests:
     runs-on: ubuntu-22.04
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     browser: [electron]
-    # from https://hub.docker.com/r/cypress/browsers/tags
     container:
       image: cypress/included:latest
       options: --user 1001
