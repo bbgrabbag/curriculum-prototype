@@ -2,17 +2,20 @@ name: example-docker
 on:
   push:
     branches:
-      - 'master'
-  pull_request:
-  workflow_dispatch:
+      [master]
+      # only run this workflow when something in the app-a changes
+      # or in this workflow file
+      # paths:
+      #   - 'apps/app-a/**'
+      #   - .github/workflows/app-a.yml
 
 jobs:
   docker-browsers:
     runs-on: ubuntu-22.04
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [electron]
+    # strategy:
+    #   fail-fast: false
+    #   matrix:
+    #     browser: [electron]
     # from https://hub.docker.com/r/cypress/browsers/tags
     container:
       image: cypress/included:latest
@@ -22,6 +25,7 @@ jobs:
       # replace with the following for regular use:
       - uses: cypress-io/github-action@v6
         with:
+          runTests: false
           # working-directory: examples/basic
-          browser: ${{ matrix.browser }}
+          # browser: ${{ matrix.browser }}
       - run: npm run test
