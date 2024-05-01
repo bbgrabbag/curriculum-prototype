@@ -1,23 +1,15 @@
-name: html-tests
+name: react-tests
 on:
   push:
-    branches:
-      [master]
-      # only run this workflow when something in the app-a changes
-      # or in this workflow file
+    branches: [master]
     paths:
-    - 'lessons/test/**'
-    - package.json
-    - .github/workflows/html-tests.yml
+      - "exercises/react-demo/**"
+      - package.json
+      - .github/workflows/react-tests.yml
 
 jobs:
   run-tests:
     runs-on: ubuntu-22.04
-    # strategy:
-    #   fail-fast: false
-    #   matrix:
-    #     browser: [electron]
-    # from https://hub.docker.com/r/cypress/browsers/tags
     container:
       image: cypress/included:latest
       options: --user 1001
@@ -30,7 +22,7 @@ jobs:
       - name: Run Tests 🧪
         uses: cypress-io/github-action@v6
         with:
-          working-directory: ./lessons/test
+          working-directory: ./exercises/react-demo
           install: false
           start: npm run dev
           wait-on: http://127.0.0.1:5500
