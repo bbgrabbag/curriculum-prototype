@@ -1,6 +1,5 @@
 {
     "name": "vs-curriculum-prototype",
-    // "image": "mcr.microsoft.com/devcontainers/javascript-node",
     "build": {
         "dockerfile": "./Dockerfile"
     },

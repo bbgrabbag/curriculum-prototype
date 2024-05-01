@@ -1,0 +1,26 @@
+name: example-docker
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  docker-browsers:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [electron]
+    # from https://hub.docker.com/r/cypress/browsers/tags
+    container:
+      image: cypress/included:latest
+      options: --user 1001
+    steps:
+      - uses: actions/checkout@v4
+      # replace with the following for regular use:
+      uses: cypress-io/github-action@v6
+        with:
+          # working-directory: examples/basic
+          browser: ${{ matrix.browser }}
