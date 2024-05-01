@@ -10,7 +10,8 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "yandeu.five-server"
+                "yandeu.five-server",
+                "redhat.vscode-yaml"
             ]
         }
     }
