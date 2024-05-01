@@ -1,13 +1,14 @@
-name: example-docker
+name: html-tests
 on:
   push:
     branches:
       [master]
       # only run this workflow when something in the app-a changes
       # or in this workflow file
-      # paths:
-      #   - 'apps/app-a/**'
-      #   - .github/workflows/app-a.yml
+    paths:
+    - 'lessons/test/**'
+    - package.json
+    - .github/workflows/html-tests.yml
 
 jobs:
   docker-browsers:
@@ -26,14 +27,12 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           runTests: false
-
-      # replace with the following for regular use:
       - name: Run Tests 🧪
         uses: cypress-io/github-action@v6
         with:
+          working-directory: ./lessons/test
           install: false
           runTests: false
           start: npm run dev
-          # working-directory: examples/basic
-          # browser: ${{ matrix.browser }}
-      - run: npm run test
+          wait-on: http://127.0.0.1:5500
+          run: npm run test
