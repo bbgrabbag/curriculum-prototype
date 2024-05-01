@@ -1,0 +1,10 @@
+{
+  "name": "test-html",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "cypress run --headless"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,18 @@
+{
+    "name": "vs-curriculum-prototype",
+    // "image": "mcr.microsoft.com/devcontainers/javascript-node",
+    "build": {
+        "dockerfile": "./Dockerfile"
+    },
+    "containerEnv": {
+        "NO_PROXY": "localhost"
+    },
+    "postCreateCommand": "npm i",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "yandeu.five-server"
+            ]
+        }
+    }
+}
