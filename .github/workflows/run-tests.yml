@@ -26,6 +26,7 @@ jobs:
       - uses: cypress-io/github-action@v6
         with:
           runTests: false
+          start: npm run dev
           # working-directory: examples/basic
           # browser: ${{ matrix.browser }}
       - run: npm run test
