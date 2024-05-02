@@ -17,9 +17,11 @@ jobs:
       - name: Install 📦
         uses: cypress-io/github-action@v6
         with:
-          # runTests: false
+          runTests: false
           start: npm run dev -- --filter test-html
           wait-on: http://127.0.0.1:5500
+      - name: Run Tests 🧪
+        run: npm run test -- --filter test-html 
       # - name: Run Tests 🧪
       #   uses: cypress-io/github-action@v6
       #   with:
