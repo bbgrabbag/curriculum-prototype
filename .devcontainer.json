@@ -1,7 +1,8 @@
 {
     "name": "vs-curriculum-prototype",
-    "build": {
-        "dockerfile": "./Dockerfile"
+    "image":"cypress/included:latest",
+    "containerEnv": {
+        "CYPRESS_INSTALL_BINARY": "0"
     },
     "postCreateCommand": "npm i",
     "customizations": {
