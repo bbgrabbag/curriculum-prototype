@@ -4,12 +4,5 @@
     "containerEnv": {
         "CYPRESS_INSTALL_BINARY": "0"
     },
-    "postCreateCommand": "npm i",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "redhat.vscode-yaml"
-            ]
-        }
-    }
+    "postCreateCommand": "npm i"
 }
