@@ -1,4 +1,4 @@
-name: html-tests
+name: react-demo-tests
 on:
   push:
     branches: [master]
