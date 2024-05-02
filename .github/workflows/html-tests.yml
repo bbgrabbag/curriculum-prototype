@@ -7,7 +7,6 @@ on:
     - 'lessons/test/**'
     - package.json
     - .github/workflows/html-tests.yml
-
 jobs:
   run-tests:
     runs-on: ubuntu-22.04
@@ -16,10 +15,10 @@ jobs:
       options: --user 1001
     steps:
       - uses: actions/checkout@v4
-      - name: Install 📦
-        uses: cypress-io/github-action@v6
-        with:
-          runTests: false
+      # - name: Install 📦
+      #   uses: cypress-io/github-action@v6
+      #   with:
+      #     runTests: false
       - name: Run Tests 🧪
         uses: cypress-io/github-action@v6
         with:

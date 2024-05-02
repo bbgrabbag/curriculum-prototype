@@ -3,14 +3,10 @@
     "build": {
         "dockerfile": "./Dockerfile"
     },
-    "containerEnv": {
-        "NO_PROXY": "localhost"
-    },
     "postCreateCommand": "npm i",
     "customizations": {
         "vscode": {
             "extensions": [
-                "yandeu.five-server",
                 "redhat.vscode-yaml"
             ]
         }
