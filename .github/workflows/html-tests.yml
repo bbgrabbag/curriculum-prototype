@@ -15,14 +15,14 @@ jobs:
       options: --user 1001
     steps:
       - uses: actions/checkout@v4
-      # - name: Install 📦
-      #   uses: cypress-io/github-action@v6
-      #   with:
-      #     runTests: false
+      - name: Install 📦
+        uses: cypress-io/github-action@v6
+        with:
+          runTests: false
       - name: Run Tests 🧪
         uses: cypress-io/github-action@v6
         with:
           working-directory: ./lessons/test
-          # install: false
+          install: false
           start: npm run dev
           wait-on: http://127.0.0.1:5500
