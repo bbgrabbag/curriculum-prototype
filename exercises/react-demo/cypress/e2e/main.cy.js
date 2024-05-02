@@ -14,5 +14,7 @@ describe('counter app',() => {
         cy.get('button').contains('count is 3')
         cy.get('button').click()
         cy.get('button').contains('count is 4')
+        cy.get('button').click()
+        cy.get('button').contains('count is 5')
     })
 })
