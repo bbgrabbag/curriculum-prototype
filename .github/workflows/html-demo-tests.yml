@@ -1,11 +1,11 @@
-name: html-tests
+name: html-demo-tests
 on:
   push:
     branches: [master]
     paths:
-      - lessons/test/**
+      - lessons/html-demo/**
       - package.json
-      - .github/workflows/html-tests.yml
+      - .github/workflows/html-demo-tests.yml
 jobs:
   run-tests:
     runs-on: ubuntu-22.04
@@ -16,7 +16,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           runTests: false
-          start: npm run dev -- --filter test-html
+          start: npm run dev -- --filter html-demo
           wait-on: http://127.0.0.1:5500
       - name: Run Tests 🧪
-        run: npm run test -- --filter test-html 
+        run: npm run test -- --filter html-demo 

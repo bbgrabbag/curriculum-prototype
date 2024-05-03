@@ -1,11 +1,11 @@
-name: react-tests
+name: react-demo-tests
 on:
   push:
     branches: [master]
     paths:
       - exercises/react-demo/**
       - package.json
-      - .github/workflows/react-tests.yml
+      - .github/workflows/react-demo-tests.yml
 jobs:
   run-tests:
     runs-on: ubuntu-22.04
