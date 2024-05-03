@@ -1,5 +1,6 @@
 name: html-demo-tests
 on:
+  workflow_dispatch:
   push:
     branches: [master]
     paths:
